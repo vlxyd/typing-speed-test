@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Leveling Typing Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Solo Leveling Typing Test</h1>
+        <p>Test your typing speed offline!</p>
+
+        <div class="text-display" id="textDisplay"></div>
+        <textarea id="inputArea" placeholder="Start typing here..." autofocus></textarea>
+
+        <div class="stats">
+            <span>Time: <span id="timer">60</span>s</span>
+            <span>WPM: <span id="wpm">0</span></span>
+            <span>Accuracy: <span id="accuracy">0</span>%</span>
+        </div>
+
+        <button id="restartBtn">Restart</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+            .then(() => console.log('Service Worker Registered'))
+            .catch(err => console.log('Service Worker Registration Failed:', err));
+        }
+    </script>
+</body>
+</html>
